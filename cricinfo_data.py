@@ -1382,7 +1382,6 @@ class Command(BaseCommand):
                             default=T20I)
 
     def handle(self, *args, **options):
-
         matchType = options['match_type']
         url = options['url']
         self.processFile(matchType=matchType, url=url)
