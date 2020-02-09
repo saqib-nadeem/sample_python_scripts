@@ -1,12 +1,19 @@
-from __future__ import division
-import os.path
-import requests
-from lxml import html
-import datetime, decimal, logging, os, pytz
-from django.core.management import BaseCommand
-from impact_app.models import *
-from django.core.exceptions import ObjectDoesNotExist
+import os
+import pytz
+import decimal
+import logging
 import calendar
+import requests
+from __future__ import division
+
+from lxml import html
+
+from django.core.exceptions import ObjectDoesNotExist
+from django.core.management import BaseCommand
+
+from impact_app.models import *
+
+
 
 os.environ['TZ'] = 'UTC'
 
@@ -399,7 +406,7 @@ class Command(BaseCommand):
         if 'winner' in matchInfo['outcome']:
             matchMetadata.winner = teams[0] if teams[0].name == str(matchInfo['outcome']['winner']).strip() else teams[1]
 
-        dates = [pytz.utc.localize(datetime.datetime.combine(i, datetime.datetime.min.time())) for i in matchInfo['dates']]
+        dates = [
         matchMetadata.when = dates
         matchMetadata.start_date = dates[0]
 
