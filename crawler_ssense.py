@@ -4,17 +4,20 @@
 #added condition for creating crawler object,removed redundant comments and spaces, Added support for fetching sale items only
 #--------------------------------------
 
-from lxml.cssselect import CSSSelector
-from urlparse import urlparse
-import httplib2
 import sys
+import httplib2
 import Queue
 import itertools
 import argparse
+from urlparse import urlparse
+
+from lxml.cssselect import CSSSelector
 
 import common
 reload(common)
 from common import crawlerCommon
+
+
 
 #---------------------------------
 # Crawler config params for Ssense
