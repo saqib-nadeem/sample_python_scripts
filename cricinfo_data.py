@@ -14,7 +14,6 @@ from django.core.management import BaseCommand
 from impact_app.models import *
 
 
-
 os.environ['TZ'] = 'UTC'
 
 logger = logging.getLogger('impact_app_management')
